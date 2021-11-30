@@ -3,7 +3,6 @@ const search = document.querySelector("input")
 const messageOne = document.querySelector("#message-1")
 const messageTwo = document.querySelector("#message-2")
 
-
 weatherForm.addEventListener("submit", (e) => {
   e.preventDefault()
   
@@ -11,7 +10,7 @@ weatherForm.addEventListener("submit", (e) => {
   messageOne.textContent = "Loading..."
   messageTwo.textContent = ""
 
-  fetch(`http://127.0.0.1:4700/weather?address=${address}`).then((res) => {
+  fetch(`/weather?address=${address}`).then((res) => {
     res.json().then((data) => {
       if (data.error) {
         messageOne.textContent = data.error
